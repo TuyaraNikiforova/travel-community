@@ -1,0 +1,22 @@
+travel-community/
+├── public/          # Статические файлы (CSS, изображения, JS для фронтенда)
+│   ├── css/
+│   │   └── main.css # Ваш файл стилей
+│   ├── images/      # Все ваши изображения из макета
+│   └── js/
+│       └── script.js # Клиентский JavaScript
+├── views/           # Шаблоны страниц (EJS)
+│   ├── index.ejs
+│   ├── stories.ejs
+│   ├── story1.ejs
+│   ├── story_form.ejs
+│   ├── travellers.ejs
+│   └── partials/    # Общие части сайта (шапка, подвал)
+│       └── header.ejs
+├── database/        # База данных
+│   └── db.js        # Код для подключения к БД
+├── routes/          # Маршруты (логика для каждой страницы)
+│   ├── index.js
+│   ├── stories.js
+│   └── auth.js      # Маршруты для регистрации/входа
+└── server.js        # Главный файл, запускающий сервер

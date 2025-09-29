@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <link href="/css/main.css" rel="stylesheet" />
+  <title>Главная</title>
+</head>
+<body>
+  <div class="v2_2">
+    <!-- Вставляем шапку -->
+    <%- include('partials/header') %>
+
+    <!-- Блок с популярными историями -->
+    <div class="v2_368">
+      <% stories.forEach(story => { %>
+        <div class="v2_369">
+          <h3><%= story.title %></h3>
+          <p><%= story.short_description %></p>
+          <a href="/stories/<%= story.id %>">Читать далее...</a>
+        </div>
+      <% }); %>
+    </div>
+
+    <!-- Блок с топом путешественников -->
+    <div class="v3_99">
+      <% travelers.forEach(traveler => { %>
+        <div class="v3_107">
+          <p><%= traveler.username %> (Историй: <%= traveler.story_count %>)</p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</body>
+</html>

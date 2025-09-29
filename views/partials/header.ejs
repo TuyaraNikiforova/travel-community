@@ -1,0 +1,22 @@
+<!-- views/partials/header.ejs -->
+<header>
+  <div class="v3_180">
+    <div class="v3_181"><a href="/"><span class="v3_182">Путешественники</span></a></div>
+    <div class="v3_183"><a href="/stories"><span class="v3_184">Истории путешествий</span></a></div>
+    <div class="v3_186"><a href="#"><span class="v3_187">Обратная связь</span></a></div>
+  </div>
+  <div class="v3_190">
+    <% if (user) { %>
+      <!-- Если пользователь вошел -->
+      <span>Привет, <%= user.username %>!</span>
+      <a href="/auth/logout">Выйти</a>
+      <% if (user.role === 'traveler') { %>
+        <a href="/stories/new">Добавить историю</a>
+      <% } %>
+    <% } else { %>
+      <!-- Если пользователь гость -->
+      <div class="v3_191"><a href="/auth/register"><span class="v3_192">Регистрация</span></a></div>
+      <div class="v3_193"><a href="/auth/login"><span class="v3_194">Войти</span></a></div>
+    <% } %>
+  </div>
+</header>
