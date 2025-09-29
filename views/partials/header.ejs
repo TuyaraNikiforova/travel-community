@@ -1,22 +1,43 @@
-<!-- views/partials/header.ejs -->
-<header>
-  <div class="v3_180">
-    <div class="v3_181"><a href="/"><span class="v3_182">Путешественники</span></a></div>
-    <div class="v3_183"><a href="/stories"><span class="v3_184">Истории путешествий</span></a></div>
-    <div class="v3_186"><a href="#"><span class="v3_187">Обратная связь</span></a></div>
-  </div>
-  <div class="v3_190">
-    <% if (user) { %>
-      <!-- Если пользователь вошел -->
-      <span>Привет, <%= user.username %>!</span>
-      <a href="/auth/logout">Выйти</a>
-      <% if (user.role === 'traveler') { %>
-        <a href="/stories/new">Добавить историю</a>
-      <% } %>
-    <% } else { %>
-      <!-- Если пользователь гость -->
-      <div class="v3_191"><a href="/auth/register"><span class="v3_192">Регистрация</span></a></div>
-      <div class="v3_193"><a href="/auth/login"><span class="v3_194">Войти</span></a></div>
-    <% } %>
-  </div>
-</header>
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <title>Путешественники</title>
+</head>
+<body>
+<div class="v10_77">
+    <div class="v10_78">
+        <div class="v10_79"><a href="/"><span class="v10_80">Путешественники</span></a></div>
+        <div class="v10_81"><a href="/stories"><span class="v10_82">Истории путешествий</span></a></div>
+        <div class="v10_83"><a href="#"><span class="v10_84">Обратная связь</span></a></div>
+    </div>
+    
+    <div class="v10_86">
+        <% if (user) { %>
+            <!-- Если пользователь вошел -->
+            <div class="v10_89">
+                <span class="v10_90">Привет, <%= user.username %>!</span>
+            </div>
+            <div class="v10_131">
+                <div class="v10_132"></div>
+            </div>
+            <a href="/auth/logout">Выйти</a>
+            <% if (user.role === 'traveler' || user.role === 'admin') { %>
+                <a href="/stories/new">Добавить историю</a>
+            <% } %>
+        <% } else { %>
+            <!-- Если пользователь гость -->
+            <div class="v10_89">
+                <a href="/auth/register"><span class="v10_90">Регистрация</span></a>
+            </div>
+            <div class="v10_131">
+                <div class="v10_132"></div>
+            </div>
+            <a href="/auth/login">Войти</a>
+        <% } %>
+    </div>
+    
+    <div class="v10_91">
+        <div class="v10_92"></div>
+    </div>

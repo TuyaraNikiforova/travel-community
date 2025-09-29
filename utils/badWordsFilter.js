@@ -2,6 +2,8 @@
 const badWords = ['хуй', 'блядь','сука']; // Добавьте свой список
 
 function filterBadWords(text) {
+  if (!text) return text;
+  
   let filteredText = text;
   badWords.forEach(word => {
     const regex = new RegExp(word, 'gi');
